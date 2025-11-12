@@ -21,7 +21,12 @@ if uploaded_file is not None:
     image = image.resize((28, 28))  # resize to 28x28 pixels
     image = ImageOps.invert(image)   # invert colors if needed
     img_array = np.array(image) / 255.0  # normalize
+<<<<<<< HEAD
+    img_array = img_array.reshape(1, 28*28)  # Flatten to shape (1, 784)
+
+=======
     img_array = img_array.reshape(1, 28, 28, 1)  # reshape for model
+>>>>>>> ca2f52203c1408aff07695cceee6bc5574d8a1e9
     
     # Make prediction
     prediction = model.predict(img_array)
